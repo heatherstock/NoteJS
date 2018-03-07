@@ -7,3 +7,14 @@ function hasEmptyArrayOnInstantiation() {
 };
 hasEmptyArrayOnInstantiation();
 
+
+function storesNotesInArray() {
+  describe('#storeNotes');
+  it('stores notes in Array');
+
+  var notelist = new Notelist();
+  notelist.storeNotes('test note');
+  expect.toBeEqual(notelist.list[0].text, 'test note');
+};
+
+storesNotesInArray();
