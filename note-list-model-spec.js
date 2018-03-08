@@ -25,7 +25,12 @@ function getsNotesInArray() {
 
   var notelist = new Notelist();
   var newnote = new Note("hello");
+  var newnote2 = new Note("Bye");
+  notelist.list.push(newnote2);
   notelist.list.push(newnote);
-  expect.toBeEqual(notelist.getsNotes(), [newnote]);
+  // console.log(notelist.getsNotes()[0].text)
+  // console.log(newnote.text)
+  expect.toBeEqual((notelist.getsNotes()[0].text), newnote.text);
+  expect.toBeEqual((notelist.getsNotes()[1].text), newnote2.text);
 };
 getsNotesInArray();
