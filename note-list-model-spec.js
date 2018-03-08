@@ -1,9 +1,9 @@
 function hasEmptyArrayOnInstantiation() {
-    describe('Notelist');
-    it('has empty array on instantiation');
+  describe('Notelist');
+  it('has empty array on instantiation');
 
-    var notelist = new Notelist();
-    expect.toBeEqual(notelist.list.length, 0);
+  var notelist = new Notelist();
+  expect.toBeEqual(notelist.list.length, 0);
 };
 hasEmptyArrayOnInstantiation();
 
@@ -26,8 +26,9 @@ function getsNotesInArray() {
   var notelist = new Notelist();
   var newnote = new Note("hello");
   var newnote2 = new Note("Bye");
-  notelist.list.push(newnote2);
   notelist.list.push(newnote);
+  notelist.list.push(newnote2);
+
   // console.log(notelist.getsNotes()[0].text)
   // console.log(newnote.text)
   expect.toBeEqual((notelist.getsNotes()[0].text), newnote.text);
