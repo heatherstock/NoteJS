@@ -14,7 +14,18 @@ function storesNotesInArray() {
 
   var notelist = new Notelist();
   notelist.storeNotes('test note');
-  expect.toBeEqual(notelist.list[0].text, 'test note');
+  notelist.storeNotes('second note');
+  expect.toBeEqual(notelist.list[1].text, 'second note');
 };
-
 storesNotesInArray();
+
+function getsNotesInArray() {
+  describe('#getsNotes');
+  it("returns notes in array");
+
+  var notelist = new Notelist();
+  var newnote = new Note("hello");
+  notelist.list.push(newnote);
+  expect.toBeEqual(notelist.getsNotes(), [newnote]);
+};
+getsNotesInArray();

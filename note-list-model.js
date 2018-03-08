@@ -8,5 +8,9 @@
       this.list.push(note)
     };
 
+    Notelist.prototype.getsNotes = function(string) {
+      return this.list;
+    };
+
     exports.Notelist = Notelist;
 })(this);
