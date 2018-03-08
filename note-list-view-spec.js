@@ -1,14 +1,3 @@
-// function createNoteListViewOnInstantiation() {
-//   describe('creates a note list view');
-//   it('returns a string of HTML');
-//
-//   var notelist = new Notelist();
-//   var notelistview = new NoteListView(notelist);
-//   var html = "<ul><li><div>EMPTY</div></li><li><div>EMPTY</div></li></ul>"
-//   expect.toBeEqual(notelistview.createNoteListView(), html);
-// };
-// createNoteListViewOnInstantiation();
-
 function createNoteListViewOnInstantiation() {
   describe('creates a note list view');
   it('returns a string of HTML with notes');
@@ -22,6 +11,14 @@ function createNoteListViewOnInstantiation() {
   notelist.list.push(newnote3);
   var notelistview = new NoteListView(notelist);
   var html = "<ul><li><div>hello</div></li><li><div>Bye</div></li><li><div>yesokey</div></li></ul>"
+  expect.toBeEqual(notelistview.createNoteListView(), html);
+
+  describe("Empty notes array");
+  it("returns 'Notes Empty' when  array is empty");
+
+  var notelist = new Notelist();
+  var notelistview = new NoteListView(notelist);
+  var html = "Notes Empty"
   expect.toBeEqual(notelistview.createNoteListView(), html);
 };
 createNoteListViewOnInstantiation();
